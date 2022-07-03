@@ -2,6 +2,7 @@
 	"name": "Card Templates",
 	"package": "card_templates",
 	"author": "Mynnhos",
-	"version": "1.0.0",
+	"version": "1.0.1",
+	"ankiweb_id": "77895317",
 	"homepage": "https://github.com/GKylian/card_templates"
 }
