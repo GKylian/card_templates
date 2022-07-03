@@ -43,7 +43,7 @@ def load_templates(relative_path="user_files/templates.json"):
 
     path = os.path.join(ADDON_PATH, relative_path)
 
-    with open(path, 'r') as json_file:
+    with open(path, 'r', encoding='utf8') as json_file:
         j = json.load(json_file)
 
         for card_type, type_templates in j["templates"].items():
@@ -66,8 +66,8 @@ def save_templates(relative_path="user_files/templates.json"):
             }
     
 
-    with open(path, 'w') as json_file:
-        json_file.write(json.dumps(data))
+    with open(path, 'w', encoding='utf8') as json_file:
+        json.dump(data, json_file, ensure_ascii=False)
 
 
 # Add a new template to the list
@@ -80,14 +80,14 @@ def add_template(card_type: str, template_name: str, new_template: Template):
         new_template (Template): the new template
     """
 
-    if not templates.get(card_type, None):
+    if not templates.get(card_type, False):
         templates[card_type] = {}
     templates[card_type][template_name] = new_template
 
 # Remove a template from the list
 def delete_template(card_type: str, template_name: str):
-    if not templates[card_type]: return
-    if not templates[card_type][template_name]: return
+    if not templates.get(card_type, False): return
+    if not templates[card_type].get(template_name, False): return
     templates[card_type].pop(template_name)
 
 

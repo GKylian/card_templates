@@ -70,7 +70,7 @@ class ChooseTemplate(QDialog):
 
         close_btn.clicked.connect(self.close)
         add_btn.clicked.connect(self.on_new_template)
-        # TODO: be able to delete templates
+        delete_btn.clicked.connect(self.on_delete_template)
         choose_btn.clicked.connect(self.on_choose_template)
 
 
@@ -132,6 +132,7 @@ class ChooseTemplate(QDialog):
 
     # Callback of delete button: delete selected template
     def on_delete_template(self):
+        if not self.selected_template: return
         note = self.editor.note
         if not note: return
 
@@ -175,9 +176,8 @@ class ChooseTemplate(QDialog):
 
         for i, content in enumerate(template.fields):
             self.editor.web.eval("focusField(%s);" % json.dumps(i))
-            # Anki's HTML header seems to assume latin1 encoding instead of utf8 so we need to use that
-            # Also we need to set 'extended' to true otherwise it removes html elements (and classes)
-            self.editor.doPaste(content.encode("latin1").decode("utf8"), False, True)
+            # We need to set 'extended' to true otherwise it removes html styling
+            self.editor.doPaste(content, False, True)
 
         self.editor.web.eval("focusField(0);")
         self.close()

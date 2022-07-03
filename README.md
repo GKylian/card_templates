@@ -4,11 +4,7 @@ Allows you to create **card templates** that you can pick in the editor in *just
 
 <b>Important: </b> Cards are grouped by note type, so for example you can't use a *Cloze* card template when *Basic* is selected in the editor.
 
-<br>
-<p float="left">
-<img width="49%" src="https://github.com/GKylian/card_templates/blob/bba46e6292fef9de1f99c84a244c5a28ffe42a12/docs/before_template.png">
-<img width="49%" src="https://github.com/GKylian/card_templates/blob/bba46e6292fef9de1f99c84a244c5a28ffe42a12/docs/after_template.png">
-</p>
+<img src="https://user-images.githubusercontent.com/58667192/177041164-0217766e-0d62-416a-b901-e0aa1da29e23.png">
 
 **HOW TO USE A TEMPLATE:** in the editor, click on the template button (or use the shortcut: **Ctrl+T** by default). Navigate between templates with the up/down arrow keys, filter them by name. **Apply the selected template** with **Enter** (or the choose button).
 
