@@ -80,14 +80,14 @@ def add_template(card_type: str, template_name: str, new_template: Template):
         new_template (Template): the new template
     """
 
-    if not templates.get(card_type, None):
+    if not templates.get(card_type, False):
         templates[card_type] = {}
     templates[card_type][template_name] = new_template
 
 # Remove a template from the list
 def delete_template(card_type: str, template_name: str):
-    if not templates[card_type]: return
-    if not templates[card_type][template_name]: return
+    if not templates.get(card_type, False): return
+    if not templates[card_type].get(template_name, False): return
     templates[card_type].pop(template_name)
 
 

@@ -70,7 +70,7 @@ class ChooseTemplate(QDialog):
 
         close_btn.clicked.connect(self.close)
         add_btn.clicked.connect(self.on_new_template)
-        # TODO: be able to delete templates
+        delete_btn.clicked.connect(self.on_delete_template)
         choose_btn.clicked.connect(self.on_choose_template)
 
 
@@ -132,6 +132,7 @@ class ChooseTemplate(QDialog):
 
     # Callback of delete button: delete selected template
     def on_delete_template(self):
+        if not self.selected_template: return
         note = self.editor.note
         if not note: return
 
