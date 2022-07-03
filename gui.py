@@ -175,9 +175,8 @@ class ChooseTemplate(QDialog):
 
         for i, content in enumerate(template.fields):
             self.editor.web.eval("focusField(%s);" % json.dumps(i))
-            # Anki's HTML header seems to assume latin1 encoding instead of utf8 so we need to use that
-            # Also we need to set 'extended' to true otherwise it removes html elements (and classes)
-            self.editor.doPaste(content.encode("latin1").decode("utf8"), False, True)
+            # We need to set 'extended' to true otherwise it removes html styling
+            self.editor.doPaste(content, False, True)
 
         self.editor.web.eval("focusField(0);")
         self.close()
