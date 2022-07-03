@@ -1,0 +1,14 @@
+{
+    "templates": {
+        "Basic": {
+            "Example template": {
+                "created": "1900-01-01",
+                "last_used": "1900-01-01",
+                "fields": [
+                    "<h1>Example template</h1><br><div>This is an example template, you can delete it in the templates menu.</div>",
+                    "Card templates keep the html intact, so the formatting stays the same (e.g. h1, colors, classes, etc.).<br>Don't forget you can also open the template menu with the shortcut key (by default Ctrl+T), navigate the list with the up/down arrow keys and filter the list by name."
+                ]
+            }
+        }
+    }
+}
